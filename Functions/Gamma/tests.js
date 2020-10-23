@@ -2,7 +2,7 @@
 const { sqrt, pow, log, exp, abs, sin, round, asin } = Math;
 
 const { performance } = require('perf_hooks');
-const { gamma, p1gamma } = require('./Gamma');
+const { gamma, gamma1p } = require('./Gamma');
 
 let i = 0, log_average_err = 0, functions_evaluations = [], functions_types = [];
 

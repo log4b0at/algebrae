@@ -5,10 +5,10 @@ Javascript implementations of various mathematical tools
 
 ### Special Functions
 
-| Name 		| Formula	| Function 		| Complexity| Average Log10 Error*	| Worst Detected Error* | Function variants |
-|-----------|-----------|---------------|---------------|-------------------|-----------------------|-------------------|
-| Gamma		| ![FGamma]	| `gamma(s)`	| O(1)		| -16.023			| -15.352				| `p1gamma(s)`		|
-| SinPi		| ![FSinPI] | `sinpi(x)`	| O(1)		| Correctly rounding| N/A					|					|
+| Name 		| Formula	| Function 		| Complexity| Average Error*	| Worst Error*	|
+|-----------|-----------|---------------|-----------|-------------------|---------------|
+| Gamma		| ![FGamma]	| `gamma[1p]`	| O(1)		| -16.023			| -15.352		|
+| Pi		| ![FSinPI] | `[sin]pi`		| O(1)		| N/A				| N/A			|
 
 [FGamma]: ./docs/FGamma.png "Gamma"
 

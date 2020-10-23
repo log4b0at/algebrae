@@ -1,4 +1,4 @@
-const { sinpi } = require('../SinPi/SinPi')
+const { sinpi, pi } = require('../Pi/Pi')
 
 function binet(x)
 {
@@ -9,11 +9,12 @@ function binet(x)
 	const ix8 = ix4 * ix4;
 	const ix10 = ix4 * ix6;
 	const ix12 = ix6 * ix6;
+
 	return (
-		(1. / 12.) - ix2 / 360. + ix4 / 1260.
-		- ix6 / 1680. + ix8 / 1188. - ix10 * (691/360360) 
-		+ ix12 / 156.
-	) * ix;
+		(ix / 12.) + ix * (- ix2 / 360. + (ix4 / 1260. + (
+		- ix6 / 1680. + (ix8 / 1188. + (-(ix10*691) / 360360 
+		+ ix12 / 156.)))))
+	);
 }
 
 function pole(x)
@@ -35,11 +36,11 @@ function positive(x) {
 		power /= 2;
 	let result = Math.pow(x, power);
 	let last = result;
-	result = result + result * Math.expm1(b);
+	result = result * Math.expm1(b) + result;
 	result /= Math.exp(offset);
 	if (o > 142)
 		result *= last;
-	result = result * 2 + result * 0.506628274631000502415765;
+	result = result * 0.506628274631000502415765 + result * 2;
 	if (o < 10)
 		result /= (o + 1) * (o + 2) * (o + 3) * (o + 4) * (o + 5) * (o + 6) * (o + 7) * (o + 8) * (o + 9) * (o + 10);
 	return result;
@@ -47,8 +48,7 @@ function positive(x) {
 
 function reflection(x)
 {
-	const xpi = 4 * x - 0.8584073464102067615 * x;
-	return xpi / (sinpi(x) * positive(-x));
+	return pi(x) / (sinpi(x) * positive(-x));
 }
 
 /**
@@ -60,14 +60,14 @@ function gamma(x)
 	if (0 < x && x < 0.5)
 		return pole(x);
 	else
-		return p1gamma(x - 1);
+		return gamma1p(x - 1);
 }
 
 /**
  * Compute `°𝚪(x + 1)` where 𝚪 is Euler gamma function
  * @param {number} x A float64 number
  */
-function p1gamma(x) {
+function gamma1p(x) {
 	if (x === -1)
 		return NaN;
 	else if (x < 0)
@@ -76,4 +76,4 @@ function p1gamma(x) {
 		return positive(x);
 }
 
-module.exports = { gamma, p1gamma }
+module.exports = { gamma, gamma1p }
