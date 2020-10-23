@@ -10,6 +10,8 @@ Javascript implementations of various mathematical tools
 | Gamma		| ![FGamma]	| `gamma[1p]`	| O(1)		| -16.023			| -15.352		|
 | Pi		| ![FSinPI] | `[sin]pi`		| O(1)		| N/A				| N/A			|
 
+<!-- Website for formulas: http://www.sciweavers.org/free-online-latex-equation-editor -->
+
 [FGamma]: ./docs/FGamma.png "Gamma"
 
 [FSinPi]: ./docs/FSinPi.png "SinPi"
