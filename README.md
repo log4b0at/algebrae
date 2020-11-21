@@ -14,7 +14,7 @@ Javascript implementations of various mathematical tools
 
 | Name 					| Formula	| Function 			| Complexity		| BigInt	|
 |-----------------------|-----------|-------------------|-------------------|-----------|
-| BinomialCoefficients	| ![FBinCo]	| `binomial`		| O(min(k, n - k))	| yes		|
+| BinomialCoefficient	| ![FBinCo]	| `binomial`		| O(min(k, n - k))	| yes		|
 
 <!-- Website for formulas: http://www.sciweavers.org/free-online-latex-equation-editor -->
 
